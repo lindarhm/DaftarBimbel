@@ -62,44 +62,137 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doProcess() {
+        if (isValid()) {
+            String nama = senama.getText().toString();
+            String aalamat = sealamat.getText().toString();
+            String assek = sesekolah.getText().toString();
+            String eeemail = seemail.getText().toString();
+            int uumurr = Integer.parseInt(seumur.getText().toString());
+            int kodeposss = Integer.parseInt(sekodepos.getText().toString());
+            int nootelpp = Integer.parseInt(setelp.getText().toString());
+
+            ntawal.setText("Selamat anda sudah terdaftar...!!!");
+            ntnama.setText("Nama : " + nama);
+            ntalamat.setText("Alamat : " + aalamat);
+            ntasalsekolah.setText("Asal sekolah : " + assek);
+            ntemail.setText("E-mail : " + eeemail);
+
+            String hasil = null;
+            if (JK.getCheckedRadioButtonId() != -1) {
+                RadioButton rb = (RadioButton)
+                        findViewById(JK.getCheckedRadioButtonId());
+                hasil = rb.getText().toString();
+            }
+            if (hasil == null) {
+                ntjenisKelamin.setText("Anda belum memilih jenis kelamin");
+            } else {
+                ntjenisKelamin.setText("Jenis kelamin : " + hasil);
+            }
+
+            String hasil2 = "Paket yang anda pilih : \n";
+            if (a.isChecked()) hasil2 += a.getText() + "\n";
+            if (b.isChecked()) hasil2 += b.getText() + "\n";
+            if (c.isChecked()) hasil2 += c.getText() + "\n";
+            if (d.isChecked()) hasil2 += d.getText() + "\n";
+            if (e.isChecked()) hasil2 += e.getText() + "\n";
+
+            ntpaketbimbel.setText(hasil2);
+            ntagama.setText("Agama : " + ag.getSelectedItem().toString());
+
+            ntumur.setText("Umur : " + uumurr + " tahun");
+            ntkodepos.setText("Kode pos : " + kodeposss);
+            ntnotelp.setText("No Telphon : " + nootelpp);
+        }
+    }
+
+    public boolean isValid()
+    {
+    boolean valid = true;
         String nama = senama.getText().toString();
         String aalamat = sealamat.getText().toString();
         String assek = sesekolah.getText().toString();
         String eeemail = seemail.getText().toString();
-        int uumurr = Integer.parseInt(seumur.getText().toString());
-        int kodeposss = Integer.parseInt(sekodepos.getText().toString());
-        int nootelpp = Integer.parseInt(setelp.getText().toString());
+        String umurr = seumur.getText().toString();
+        String kodeposs = sekodepos.getText().toString();
+        String notelpp = setelp.getText().toString();
 
-        ntawal.setText("Selamat anda sudah terdaftar...!!!");
-        ntnama.setText("Nama : " + nama);
-        ntalamat.setText("Alamat : " + aalamat);
-        ntasalsekolah.setText("Asal sekolah : " + assek);
-        ntemail.setText("E-mail : " + eeemail);
 
-        String hasil = null;
-        if (JK.getCheckedRadioButtonId() != -1) {
-            RadioButton rb = (RadioButton)
-                    findViewById(JK.getCheckedRadioButtonId());
-            hasil = rb.getText().toString();
+        if(nama.isEmpty())
+        {
+            senama.setError("Nama belum diisi");
+            valid = false;
         }
-        if (hasil == null) {
-            ntjenisKelamin.setText("Anda belum memilih jenis kelamin");
-        } else {
-            ntjenisKelamin.setText("Jenis kelamin : " + hasil);
+        else
+        {
+            senama.setError(null);
         }
 
-        String hasil2 = "Paket yang anda pilih : \n";
-        if (a.isChecked()) hasil2 += a.getText() + "\n";
-        if (b.isChecked()) hasil2 += b.getText() + "\n";
-        if (c.isChecked()) hasil2 += c.getText() + "\n";
-        if (d.isChecked()) hasil2 += d.getText() + "\n";
-        if (e.isChecked()) hasil2 += e.getText() + "\n";
 
-        ntpaketbimbel.setText(hasil2);
-        ntagama.setText("Agama : " + ag.getSelectedItem().toString());
 
-        ntumur.setText("Umur : " + uumurr + " tahun");
-        ntkodepos.setText("Kode pos : " + kodeposss);
-        ntnotelp.setText("No Telphon : " + nootelpp);
+        if(aalamat.isEmpty())
+        {
+            sealamat.setError("Alamat belum diisi");
+            valid = false;
+        }
+        else
+        {
+            sealamat.setError(null);
+        }
+
+
+
+        if(assek.isEmpty())
+        {
+            sesekolah.setError("Asal sekolah belum diisi");
+            valid = false;
+        }
+        else
+        {
+            sesekolah.setError(null);
+        }
+
+
+        if(eeemail.isEmpty())
+        {
+            seemail.setError("Asal sekolah belum diisi");
+            valid = false;
+        }
+        else
+        {
+            seemail.setError(null);
+        }
+
+
+        if(umurr.isEmpty())
+        {
+            seumur.setError("Umur belum diisi");
+            valid = false;
+        }
+        else
+        {
+            seumur.setError(null);
+        }
+
+        if(kodeposs.isEmpty())
+        {
+            sekodepos.setError("Kode pos belum diisi");
+            valid = false;
+        }
+        else
+        {
+            sekodepos.setError(null);
+        }
+
+        if(notelpp.isEmpty())
+        {
+            setelp.setError("Kode pos belum diisi");
+            valid = false;
+        }
+        else
+        {
+            setelp.setError(null);
+        }
+
+        return valid;
     }
 }
