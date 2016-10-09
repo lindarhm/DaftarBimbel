@@ -8,7 +8,10 @@ Absen 24
 NIS : 
 Nama Sekolah : SMK Telkom Malang
 
-![GitHub Logo](D:\Androidproject\Screenshot_1474129882.png)
-![GitHub Logo](D:\Androidproject\Screenshot_1474129882.png)
+![GitHub Logo](Screenshot_1474129882.png)
+![GitHub Logo](Screenshot_1474129896.png)
+![GitHub Logo](Screenshot_1474129900.png)
+![GitHub Logo](Screenshot_1474129971.png)
+![GitHub Logo](Screenshot_1474130231.png)
 Link : https://drive.google.com/open?id=0BxgHUlWaStqJcUM2UEdyUE9RaWM
 
